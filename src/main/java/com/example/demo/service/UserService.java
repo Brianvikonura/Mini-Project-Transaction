@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.User;
+import com.example.demo.repository.TransaksiRepository;
 import com.example.demo.repository.UserAccountsRepository;
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,9 @@ public class UserService {
 
     @Autowired
     UserAccountsRepository userAccountsRepository;
+
+    @Autowired
+    TransaksiRepository transaksiRepository;
 
     public User createUser(User request) {
         User response = request;
