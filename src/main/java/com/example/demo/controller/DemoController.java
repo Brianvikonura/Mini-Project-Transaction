@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.Rate;
 import com.example.demo.entity.User;
+import com.example.demo.service.RateService;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +13,9 @@ import org.springframework.web.bind.annotation.*;
 public class DemoController {
     @Autowired
     UserService userService;
+
+    @Autowired
+    RateService rateService;
 
     @PostMapping("/createUser")
     public ResponseEntity<User> create (@RequestBody User request) {
@@ -29,4 +34,12 @@ public class DemoController {
 
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/getRate")
+    public ResponseEntity<Rate> getRate(@RequestParam Float kurs) {
+
+        Rate response = rateService.getRate(kurs);
+        return ResponseEntity.ok(response);
+    }
+
 }
