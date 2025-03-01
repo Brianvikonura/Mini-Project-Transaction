@@ -15,10 +15,10 @@ public class Rate {
     private Integer id;
 
     @Column(name = "mata_uang_asal")
-    private Float mataUangAsal;
+    private String mataUangAsal;
 
     @Column(name = "mata_uang_tujuan")
-    private Float mataUangTujuan;
+    private String mataUangTujuan;
 
     @Column(name = "kurs")
     private Float kurs;

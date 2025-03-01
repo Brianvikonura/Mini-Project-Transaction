@@ -36,9 +36,17 @@ public class DemoController {
     }
 
     @GetMapping("/getRate")
-    public ResponseEntity<Rate> getRate(@RequestParam Float kurs) {
+    public ResponseEntity<Float> getRate(@RequestParam Integer request) {
 
-        Rate response = rateService.getRate(kurs);
+        Float response = rateService.getRateById(request);
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/createKurs")
+    public ResponseEntity<Rate> createRate(@RequestBody Rate request){
+
+        Rate response = request;
+        response = rateService.createRate(request);
         return ResponseEntity.ok(response);
     }
 

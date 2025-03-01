@@ -14,13 +14,16 @@ public class RateService {
 
     public Rate createRate(Rate request) {
 
-        return rateRepository.save(request);
+        Rate response = request;
+        rateRepository.save(response);
+        return response;
     }
 
-    public Rate getRate(Float kurs) {
+    public Float getRateById(Integer request) {
+        Rate response = new Rate();
+        response = rateRepository.findById(request).get();
 
-        Optional<Rate> response = rateRepository.findByKurs(kurs);
-
-        return response.orElse(null);
+        return response.getKurs();
     }
+
 }
