@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.User;
-import com.example.demo.repository.UserAccountsRepository;
+import com.example.demo.repository.AccountsRepository;
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ public class UserService {
     UserRepository userRepository;
 
     @Autowired
-    UserAccountsRepository userAccountsRepository;
+    AccountsRepository accountsRepository;
 
     public User createUser(User request) {
         User response = request;
