@@ -1,12 +1,17 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.Account;
 import com.example.demo.entity.Rate;
 import com.example.demo.entity.User;
+import com.example.demo.model.AkunDTO;
+import com.example.demo.service.AccountService;
 import com.example.demo.service.RateService;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -16,6 +21,9 @@ public class DemoController {
 
     @Autowired
     RateService rateService;
+
+    @Autowired
+    AccountService accountService;
 
     @PostMapping("/createUser")
     public ResponseEntity<User> create (@RequestBody User request) {
@@ -47,6 +55,19 @@ public class DemoController {
 
         Rate response = request;
         response = rateService.createRate(request);
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/createAkun")
+    public ResponseEntity<Account> createAccount(@RequestBody Account request){
+        Account response = request;
+        response = accountService.createAccount(request);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/getAllAkun")
+    public ResponseEntity<AkunDTO> getAllAkun(@RequestParam Integer requestUserId){
+        AkunDTO response = accountService.getAllAccount(requestUserId);
         return ResponseEntity.ok(response);
     }
 
