@@ -54,25 +54,41 @@ Pastikan semua dependensi dan konfigurasi telah dipersiapkan sebelum menjalankan
 ## 💻 Dokumentasi
 
 1️⃣ Create User
+
+Membuat atau menambahkan user atau nasabah baru
 ![Create User](https://drive.google.com/uc?export=view&id=1nYobspsZVqg0HmXexHk0XqMtJIZ0SFa5)
 
 2️⃣ Create Akun
+
+Membuat atau menambahkan akun rekening baru
 ![Create Akun](https://drive.google.com/uc?export=view&id=1uBSPNzciLAyIVrikxj64UJI90J1D0ZYi)
 
 3️⃣ Get User
+
+Menarik data nasabah
 ![Get User](https://drive.google.com/uc?export=view&id=1l7inrM_ROYujFD3iezUt676OKS37O9PL)
 
 4️⃣ Get All Akun
+
+Menarik data seluruh akun rekening yang dimiliki seorang nasabah
 ![Get All Akun](https://drive.google.com/uc?export=view&id=1qN0I650Y3hPi7FE58FnclzRDzZ9mh8i5)
 
 5️⃣ Get Rekening
+
+Menarik data akun rekening nasabah
 ![Get Rekening](https://drive.google.com/uc?export=view&id=1JIxygDFWEc43WM6WYcHwHaLsuZIRx6z2)
 
 6️⃣ Create Kurs
+
+Membuat atau menambahkan kurs valuta asing
 ![Create Kurs](https://drive.google.com/uc?export=view&id=1sAQewBUHROUxPW30o-4nmqXFrEfnL7_Y)
 
 7️⃣ Transfer Valas
+
+Melakukan transaksi pertukaran valuta asing
 ![Transfer Valas](https://drive.google.com/uc?export=view&id=1Vl0SFLxp1gDhatR2NgnXtY00mnHTvXTM)
 
 8️⃣ Update Kurs Valas
+
+Update atau merubah kurs valuta asing
 ![Update Kurs Valas](https://drive.google.com/uc?export=view&id=1HnEv9xgPsI1gXpxNJ7O1iqPSnVgO5yfp)
