@@ -1,7 +1,7 @@
 # 💰 Mini Project Kelompok 2
 
 Selamat datang di repository **Mini Project Kelompok 2**! 🚀  
-Proyek ini bertujuan untuk membangun sistem transaksi valuta asing (valas).
+Proyek ini bertujuan untuk membangun sistem Transaksi Valuta Asing (Valas).
 ---
 
 ## 👥 Anggota Kelompok
@@ -48,3 +48,31 @@ Gunakan fitur transaksi untuk berinteraksi dengan sistem.
 Pastikan semua dependensi dan konfigurasi telah dipersiapkan sebelum menjalankan proyek.
 
 🚀 Selamat Mencoba & Happy Coding! 🚀
+
+---
+
+## 💻 Dokumentasi
+
+1️⃣ Create User
+![Create User](https://drive.google.com/uc?export=view&id=1nYobspsZVqg0HmXexHk0XqMtJIZ0SFa5)
+
+2️⃣ Create Akun
+![Create Akun](https://drive.google.com/uc?export=view&id=1uBSPNzciLAyIVrikxj64UJI90J1D0ZYi)
+
+3️⃣ Get User
+![Get User](https://drive.google.com/uc?export=view&id=1l7inrM_ROYujFD3iezUt676OKS37O9PL)
+
+4️⃣ Get All Akun
+![Get All Akun](https://drive.google.com/uc?export=view&id=1qN0I650Y3hPi7FE58FnclzRDzZ9mh8i5)
+
+5️⃣ Get Rekening
+![Get Rekening](https://drive.google.com/uc?export=view&id=1JIxygDFWEc43WM6WYcHwHaLsuZIRx6z2)
+
+6️⃣ Create Kurs
+![Create Kurs](https://drive.google.com/uc?export=view&id=1sAQewBUHROUxPW30o-4nmqXFrEfnL7_Y)
+
+7️⃣ Transfer Valas
+![Transfer Valas](https://drive.google.com/uc?export=view&id=1Vl0SFLxp1gDhatR2NgnXtY00mnHTvXTM)
+
+8️⃣ Update Kurs Valas
+![Update Kurs Valas](https://drive.google.com/uc?export=view&id=1HnEv9xgPsI1gXpxNJ7O1iqPSnVgO5yfp)
