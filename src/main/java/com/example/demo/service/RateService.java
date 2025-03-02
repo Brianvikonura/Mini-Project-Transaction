@@ -19,7 +19,7 @@ public class RateService {
         return response;
     }
 
-    public Float getRateById(Integer request) {
+    public Double getRateById(Integer request) {
         Rate response = new Rate();
         response = rateRepository.findById(request).get();
 

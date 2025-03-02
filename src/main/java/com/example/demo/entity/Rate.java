@@ -1,9 +1,6 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -11,6 +8,7 @@ import lombok.Data;
 @Table(name = "rate")
 public class Rate {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "id")
     private Integer id;
 
@@ -21,6 +19,6 @@ public class Rate {
     private String mataUangTujuan;
 
     @Column(name = "kurs")
-    private Float kurs;
+    private Double kurs;
 
 }

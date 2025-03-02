@@ -1,9 +1,6 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -11,7 +8,7 @@ import lombok.Data;
 @Table(name = "account")
 public class Account {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY) // Jika id auto-increment
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Jika id auto-increment
     @Column(name = "id")
     private Integer id;
 
@@ -25,7 +22,7 @@ public class Account {
     private String mataUang;
 
     @Column(name = "saldo")
-    private Float saldo;
+    private Double saldo;
 
 //    @ManyToOne
 //    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)

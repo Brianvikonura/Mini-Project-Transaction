@@ -46,6 +46,12 @@ public class AccountService {
 
     }
 
+    public Account getAccountByNorek(String norek){
+        Account account = new Account();
+        account = accountsRepository.findAllByNoRek(norek);
+        return account;
+    }
+
     public ResponseEntity<Account> getAccount(String param) {
         Integer accountId = Integer.valueOf(param);
 

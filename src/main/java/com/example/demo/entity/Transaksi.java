@@ -1,11 +1,9 @@
 package com.example.demo.entity;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -13,17 +11,18 @@ import lombok.Data;
 @Table(name = "transaksi")
 public class Transaksi {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "transaksiId")
     private Integer transaksiId;
 
     @Column(name = "jumlahIn")
-    private String jumlahIn;
+    private Double jumlahIn;
 
     @Column(name = "jumlahOut")
-    private String jumlahOut;
+    private Double jumlahOut;
 
     @Column(name = "waktuTransaksi")
-    private Date waktuTransaksi;
+    private LocalDateTime waktuTransaksi;
 
     @Column(name = "rateId")
     private Integer rateId;

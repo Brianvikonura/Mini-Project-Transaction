@@ -2,10 +2,14 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Account;
 import com.example.demo.entity.Rate;
+import com.example.demo.entity.Transaksi;
 import com.example.demo.entity.User;
 import com.example.demo.model.AkunDTO;
+import com.example.demo.model.GetTransferDTO;
+import com.example.demo.model.ReqTransferDTO;
 import com.example.demo.service.AccountService;
 import com.example.demo.service.RateService;
+import com.example.demo.service.TransaksiService;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +28,9 @@ public class DemoController {
 
     @Autowired
     AccountService accountService;
+
+    @Autowired
+    TransaksiService transaksiService;
 
     @PostMapping("/createUser")
     public ResponseEntity<User> create (@RequestBody User request) {
@@ -44,9 +51,9 @@ public class DemoController {
     }
 
     @GetMapping("/getRate")
-    public ResponseEntity<Float> getRate(@RequestParam Integer request) {
+    public ResponseEntity<Double> getRate(@RequestParam Integer request) {
 
-        Float response = rateService.getRateById(request);
+        Double response = rateService.getRateById(request);
         return ResponseEntity.ok(response);
     }
 
@@ -68,6 +75,18 @@ public class DemoController {
     @GetMapping("/getAllAkun")
     public ResponseEntity<AkunDTO> getAllAkun(@RequestParam Integer requestUserId){
         AkunDTO response = accountService.getAllAccount(requestUserId);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/getRekening")
+    public ResponseEntity<Account> getRekening(@RequestParam String noRekening){
+        Account response = accountService.getAccountByNorek(noRekening);
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/transferValas")
+    public ResponseEntity<GetTransferDTO> transfer(@RequestBody ReqTransferDTO reqTransferDTO){
+        GetTransferDTO response = transaksiService.transferValas(reqTransferDTO);
         return ResponseEntity.ok(response);
     }
 
