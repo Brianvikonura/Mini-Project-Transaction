@@ -5,7 +5,7 @@ Proyek ini bertujuan untuk membangun sistem transaksi valuta asing (valas).
 ---
 
 ## 👥 Anggota Kelompok
-- 🏅 Annisya Aprilya
+- 🏅 Annysa Aprilya
 - 🏅 Aulia Sihelau
 - 🏅 Brian Viko Nura
 - 🏅 Ghani Kamil
