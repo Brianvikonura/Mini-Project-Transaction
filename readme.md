@@ -14,7 +14,7 @@ Proyek ini bertujuan untuk membangun sistem transaksi valuta asing (valas).
 
 ## 🛠️ Skema Database
 Berikut adalah skema database yang digunakan dalam proyek ini:  
-![Skema Database](https://drive.google.com/file/d/1U5N8kjQkcTI_8vWQVnW3snxhUeSYYrX6/view?usp=sharing)
+![Skema Database](https://drive.google.com/file/d/1WHxMVBItQU7tDnITiy4KBvLJ21H7F0fy/view?usp=sharing)
 
 ---
 
