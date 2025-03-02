@@ -4,9 +4,7 @@ import com.example.demo.entity.Account;
 import com.example.demo.entity.Rate;
 import com.example.demo.entity.Transaksi;
 import com.example.demo.entity.User;
-import com.example.demo.model.AkunDTO;
-import com.example.demo.model.GetTransferDTO;
-import com.example.demo.model.ReqTransferDTO;
+import com.example.demo.model.*;
 import com.example.demo.service.AccountService;
 import com.example.demo.service.RateService;
 import com.example.demo.service.TransaksiService;
@@ -80,6 +78,14 @@ public class DemoController {
     @PostMapping("/transferValas")
     public ResponseEntity<GetTransferDTO> transfer(@RequestBody ReqTransferDTO reqTransferDTO){
         GetTransferDTO response = transaksiService.transferValas(reqTransferDTO);
+        return ResponseEntity.ok(response);
+    }
+
+    @PutMapping("/updateKursValas")
+    public ResponseEntity<ResponRateUpdateDTO> updateKursValas(@RequestBody UpdateRateDTO request){
+        ResponRateUpdateDTO response = new ResponRateUpdateDTO();
+        response = rateService.updateRate(request);
+
         return ResponseEntity.ok(response);
     }
 

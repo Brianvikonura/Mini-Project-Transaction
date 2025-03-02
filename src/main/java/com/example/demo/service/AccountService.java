@@ -5,15 +5,13 @@ import com.example.demo.entity.User;
 import com.example.demo.model.AkunDTO;
 import com.example.demo.repository.AccountsRepository;
 import com.example.demo.repository.UserRepository;
-import jakarta.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class AccountService {

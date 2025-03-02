@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Rate;
+import com.example.demo.model.ResponRateUpdateDTO;
+import com.example.demo.model.UpdateRateDTO;
 import com.example.demo.repository.RateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,20 @@ public class RateService {
         Rate response = request;
         rateRepository.save(response);
         return response;
+    }
+
+    public ResponRateUpdateDTO updateRate(UpdateRateDTO request){
+        Rate response = new Rate();
+        response = rateRepository.findByMataUangAsalAndMataUangTujuan(request.getMataUangAsal(),request.getMataUangTujuan());
+
+        response.setKurs(request.getAmount());
+        rateRepository.save(response);
+        ResponRateUpdateDTO responRateUpdateDTO = new ResponRateUpdateDTO();
+        responRateUpdateDTO.setKurs(response.getKurs());
+        responRateUpdateDTO.setMataUangAsal(response.getMataUangAsal());
+        responRateUpdateDTO.setMataUangTujuan(response.getMataUangTujuan());
+
+        return responRateUpdateDTO;
     }
 
     public Double getRateById(Integer request) {
