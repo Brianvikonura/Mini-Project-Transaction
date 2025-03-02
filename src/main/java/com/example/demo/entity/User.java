@@ -18,4 +18,9 @@ public class User {
     @Column(name = "email")
     private String email;
 
+    @Transient
+    private String rc;
+
+    @Transient
+    private String rcDesc;
 }

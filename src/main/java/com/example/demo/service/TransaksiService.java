@@ -11,6 +11,7 @@ import com.example.demo.model.ReqTransferDTO;
 import com.example.demo.repository.AccountsRepository;
 import com.example.demo.repository.RateRepository;
 import com.example.demo.repository.TransaksiRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +37,6 @@ public class TransaksiService {
 
         result = data.getKurs() * reqRateDTO.getAmount();
 
-
         GetRateDTO getRateDTO = new GetRateDTO();
         getRateDTO.setRateId(data.getId());
         getRateDTO.setResultAmount(result);
@@ -44,6 +44,7 @@ public class TransaksiService {
         return getRateDTO;
     }
 
+    @Transactional
     public GetTransferDTO transferValas(ReqTransferDTO reqTransferDTO){
         Account rekeningAsal = new Account();
         Account rekeningTujuan = new Account();
@@ -67,7 +68,6 @@ public class TransaksiService {
         accountsRepository.save(rekeningAsal);
         accountsRepository.save(rekeningTujuan);
 
-//        transaksi.setTransaksiId(1);
         transaksi.setWaktuTransaksi(LocalDateTime.now());
         transaksi.setAkunId(rekeningAsal.getId());
         transaksi.setUserId(rekeningAsal.getUsersId());
@@ -81,10 +81,6 @@ public class TransaksiService {
         getTransferDTO.setWaktuTransaksi(transaksi.getWaktuTransaksi());
         getTransferDTO.setHasilPembelianValas(hasilRate.getResultAmount());
 
-
         return getTransferDTO;
-
     }
-
-
 }

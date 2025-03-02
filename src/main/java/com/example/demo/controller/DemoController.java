@@ -50,13 +50,6 @@ public class DemoController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/getRate")
-    public ResponseEntity<Double> getRate(@RequestParam Integer request) {
-
-        Double response = rateService.getRateById(request);
-        return ResponseEntity.ok(response);
-    }
-
     @PostMapping("/createKurs")
     public ResponseEntity<Rate> createRate(@RequestBody Rate request){
 

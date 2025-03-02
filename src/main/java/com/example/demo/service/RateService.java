@@ -20,10 +20,23 @@ public class RateService {
     }
 
     public Double getRateById(Integer request) {
-        Rate response = new Rate();
-        response = rateRepository.findById(request).get();
+        try {
+            Rate response = new Rate();
+            response = rateRepository.findById(request).get();
 
-        return response.getKurs();
+            response.setRc("0000");
+            response.setRcDesc("Success");
+
+            return response.getKurs();
+
+        } catch (Exception e){
+            Rate response = new Rate();
+
+            response.setRc("4444");
+            response.setRcDesc("ID Currency tidak dikenal!");
+
+            return response.getKurs();
+        }
     }
 
 }

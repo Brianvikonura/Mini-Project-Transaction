@@ -24,8 +24,9 @@ public class Account {
     @Column(name = "saldo")
     private Double saldo;
 
-//    @ManyToOne
-//    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
-//    private User user;
-//    private Integer userId;
+    @Transient
+    private String rc;
+
+    @Transient
+    private String rcDesc;
 }

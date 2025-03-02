@@ -10,6 +10,5 @@ import com.example.demo.entity.User;
 
 public interface TransaksiRepository extends JpaRepository<Transaksi, Integer>
 {
-//    Rate findByMataUangAsalAndMataUangTujuan(String mataUangAsal, String mataUangTujuan);
 
 }

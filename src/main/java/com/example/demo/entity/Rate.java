@@ -21,4 +21,9 @@ public class Rate {
     @Column(name = "kurs")
     private Double kurs;
 
+    @Transient
+    private String rc;
+
+    @Transient
+    private String rcDesc;
 }

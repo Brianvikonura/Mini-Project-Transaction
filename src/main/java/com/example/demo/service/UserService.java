@@ -13,12 +13,6 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    @Autowired
-    AccountsRepository accountsRepository;
-
-    @Autowired
-    TransaksiRepository transaksiRepository;
-
     public User createUser(User request) {
         User response = request;
 
@@ -28,10 +22,22 @@ public class UserService {
     }
 
     public User getUser(String param) {
-        User response = new User();
+        try{
+            User response = new User();
 
-        response = userRepository.findById(Integer.valueOf(param)).get();
+            response = userRepository.findById(Integer.valueOf(param)).get();
 
-        return response;
+            response.setRc("0000");
+            response.setRcDesc("Success");
+
+            return response;
+        } catch (Exception e){
+            User response = new User();
+
+            response.setRc("4444");
+            response.setRcDesc("ID tidak dikenal!");
+
+            return response;
+        }
     }
 }

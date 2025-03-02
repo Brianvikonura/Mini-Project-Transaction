@@ -47,33 +47,22 @@ public class AccountService {
     }
 
     public Account getAccountByNorek(String norek){
-        Account account = new Account();
-        account = accountsRepository.findAllByNoRek(norek);
-        return account;
-    }
+        try {
+            Account account = new Account();
+            account = accountsRepository.findAllByNoRek(norek);
 
-    public ResponseEntity<Account> getAccount(String param) {
-        Integer accountId = Integer.valueOf(param);
+            account.setRc("0000");
+            account.setRcDesc("Success");
 
-        Account account = accountsRepository.findById(accountId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Account not found"));
+            return account;
 
-        return ResponseEntity.ok(account); // 200 OK jika ditemukan
-    }
+        } catch (Exception e){
+            Account account = new Account();
 
-    public ResponseEntity<Account> accountUpdate(Integer id, Account updatedAccount) {
-        Account existingAccount = accountsRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Account not found"));
+            account.setRc("4444");
+            account.setRcDesc("No Rekening tidak dikenal!");
 
-        // Update field jika ada perubahan
-        existingAccount.setNoRek(updatedAccount.getNoRek());
-        existingAccount.setMataUang(updatedAccount.getMataUang());
-        existingAccount.setSaldo(updatedAccount.getSaldo());
-//        existingAccount.setUser(updatedAccount.getUser()); // Update user jika perlu
-
-        // Simpan perubahan
-        accountsRepository.save(existingAccount);
-
-        return ResponseEntity.ok(existingAccount); // 200 OK dengan data akun yang diperbarui
+            return account;
+        }
     }
 }

@@ -8,8 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface RateRepository extends JpaRepository<Rate, Integer> {
-//    Optional<Rate> findById(Integer rateId);  // Menemukan rate berdasarkan ID
-//    Optional<Rate> findByKurs(Float kurs);  // Menemukan rate berdasarkan nilai kurs
     Rate findByMataUangAsalAndMataUangTujuan(String mataUangAsal, String mataUangTujuan);
 
 }
